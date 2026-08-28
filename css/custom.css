@@ -1,0 +1,235 @@
+/* ------------------------------------------------------------------
+   custom.css — hand-written overrides, loaded after css/style.css.
+   Not generated from SCSS; safe to edit directly.
+   Brand colour #3e64ff mirrors $primary in scss/style.scss.
+   ------------------------------------------------------------------ */
+
+/* Navbar brand is a full name now, not a one-word logo — scale the
+   blue disc behind the initial down to match the smaller type. */
+.navbar-brand {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand:after {
+  width: 34px;
+  height: 34px;
+  left: -10px;
+}
+
+/* ---------- Hero ---------- */
+
+/* The hero sits on a light background (no image), so hero text is dark. */
+.hero-wrap .text .hero-meta {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.availability {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 8px 20px;
+  border: 1px solid rgba(62, 100, 255, 0.3);
+  background: rgba(62, 100, 255, 0.06);
+  border-radius: 30px;
+  color: #3e64ff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.availability-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #2fbf6b;
+  vertical-align: middle;
+}
+
+/* ---------- Section leads ---------- */
+
+.heading-section .section-lead {
+  max-width: 640px;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Stack cards ---------- */
+
+.ftco-stack .services-1 {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.ftco-stack .services-1 .desc {
+  width: 100%;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tech-list li {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 4px 14px;
+  margin: 4px;
+  border: 1px solid rgba(62, 100, 255, 0.25);
+  border-radius: 20px;
+  color: #3e64ff;
+  line-height: 1.6;
+}
+
+/* ---------- Work cards ---------- */
+
+/* The gap between cards lives on the column, not the card: .work-wrap is
+   height:100% to keep side-by-side cards equal, so its own margin-bottom
+   would push it past the column instead of separating the rows. */
+#work-section .row > [class*="col-"] {
+  padding-bottom: 30px;
+}
+
+.work-wrap {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 30px;
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.work-wrap .icon {
+  flex: 0 0 50px;
+}
+
+.work-wrap .text {
+  width: auto;
+}
+
+.work-wrap h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.work-wrap .position {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-bottom: 12px;
+}
+
+.work-wrap p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+/* ---------- Résumé entries ---------- */
+
+/* The Trifinity entry carries a parenthetical about part-time overlap. */
+.resume-wrap .date small {
+  font-weight: 400;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Education entries are heading + institution with no bullet list, so the
+   institution line needs the bottom spacing the <ul> would otherwise give. */
+#page-2 .resume-wrap .position {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ---------- Hire-me banner ---------- */
+
+.ftco-hireme .hireme-note {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  max-width: 620px;
+  margin: 16px auto 0;
+}
+
+/* ---------- Footer ---------- */
+
+.ftco-footer .ftco-footer-social {
+  padding-left: 0;
+}
+
+.ftco-footer .ftco-footer-social li {
+  float: none;
+  display: inline-block;
+}
+
+/* Template quirk: .hero-wrap is `position: inherit`, so its .overlay and
+   .mouse anchor to the page instead of the hero — the blue half-band ran the
+   full document height and the scroll cue landed below the footer. */
+.hero-wrap {
+  position: relative;
+}
+
+/* The banner background is $primary, so the default primary button vanishes
+   into it — invert the CTA instead. .btn.btn-primary sets colours with
+   !important, so these have to match it. */
+.ftco-hireme .btn.btn-primary,
+.ftco-hireme .btn.btn-primary:focus {
+  background: #fff !important;
+  border: 1px solid #fff !important;
+  color: #3e64ff !important;
+}
+
+.ftco-hireme .btn.btn-primary:hover {
+  background: #a0f669 !important;
+  border: 1px solid #a0f669 !important;
+  color: #000 !important;
+}
+
+.ftco-footer {
+  padding: 4em 0;
+}
+
+.ftco-footer .ftco-footer-social li a,
+.ftco-footer .ftco-footer-social li a span {
+  color: #fff;
+}
+
+.ftco-footer .ftco-footer-social li a:hover {
+  background: #3e64ff;
+}
+
+/* ---------- Narrow screens ---------- */
+
+@media (max-width: 575.98px) {
+  .hero-wrap .text .hero-meta {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .availability {
+    max-width: 100%;
+    font-size: 12px;
+    padding: 8px 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .work-wrap {
+    padding: 24px 20px;
+  }
+
+  .ftco-hireme h2 {
+    font-size: 30px;
+  }
+}
